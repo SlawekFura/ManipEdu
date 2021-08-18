@@ -9,10 +9,8 @@ def getMatrix(theta, alpha, a, lambda_):
       [0,             0,                          0,                          1           ]])
 
 
-from sympy import Symbol, Matrix, sin, cos, pprint
+from sympy import Symbol, Matrix, sin, cos
 
-# print(m)
-# pprint(m*m)
 def getSymbolicMatrix(theta_, alpha_, a_, lambda__):
     theta = Symbol(theta_) if isinstance(theta_,str) else theta_
     alpha = Symbol(alpha_) if isinstance(alpha_,str) else alpha_

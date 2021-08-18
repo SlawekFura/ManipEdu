@@ -91,7 +91,9 @@ def genElemCoordForSingleParams(paramsValues, dhMatrix):
                 inputData[var].append(paramsValues[key])
             else:
                 inputData[var].append(dhMatrix.params[var][key])
+
     # print("inputData", inputData)
+
     TMatrix = eye(4)
     points.append(getXYZ(TMatrix))
 
@@ -99,7 +101,8 @@ def genElemCoordForSingleParams(paramsValues, dhMatrix):
         # print("inputData[\"theta\"][transMatrixIt]", inputData["theta"][transMatrixIt])
         TMatrix = TMatrix * TransitionMatrix.getMatrix(inputData["theta"][transMatrixIt], inputData["alpha"][transMatrixIt],
                                        inputData["a"][transMatrixIt], inputData["lambda"][transMatrixIt])
-        # print(TMatrix)
+        print(TMatrix)
         points.append(getXYZ(TMatrix))
+        print("it",transMatrixIt, points[-1])
 
     return points
